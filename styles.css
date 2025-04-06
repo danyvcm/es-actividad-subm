@@ -1,0 +1,1419 @@
+:root {
+    --azul-profundo: #0F4C75;
+    --turquesa: #00B4D8;
+    --verde-menta: #70E000;
+    --blanco: #FFFFFF;
+    --gris-claro: #F8F9FA;
+    --gris-oscuro: #343A40;
+    --dorado: #FFD700;
+    --rojo-pdf: #E63946;
+    --naranja-institucional: #dc580c;
+    --color-parcial1: #29ABE2; /* Azul claro */
+    --color-parcial2: #8E44AD; /* Morado */
+    --color-parcial3: #27AE60; /* Verde */
+    --color-documentos: #F39C12; /* Naranja */
+}
+
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    line-height: 1.7;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: var(--naranja-institucional);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; /* Aumentado para laptops */
+    margin: 0 auto;
+    padding: 0 20px; /* Añadido padding horizontal */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 12px;
+    transition: transform 0.3s;
+}
+
+.logo:hover img {
+    transform: rotate(10deg);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Aumentado el espacio entre enlaces */
+    margin-left: 2rem; /* Ajuste para dar espacio a la barra de búsqueda */
+}
+
+.nav-links {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 0.7rem 1.5rem; /* Aumentado el padding de los enlaces */
+    border-radius: 30px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.nav-links:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilos específicos para los enlaces de navegación */
+.parcial-1-link {
+    background-color: var(--color-parcial1);
+}
+
+.parcial-1-link:hover {
+    box-shadow: 0 0 10px 3px rgba(41, 171, 230, 0.7); /* Iluminación azul claro */
+}
+
+.parcial-2-link {
+    background-color: var(--color-parcial2);
+}
+
+.parcial-2-link:hover {
+    box-shadow: 0 0 10px 3px rgba(142, 68, 173, 0.7); /* Iluminación morada */
+}
+
+.parcial-3-link {
+    background-color: var(--color-parcial3);
+}
+
+.parcial-3-link:hover {
+    box-shadow: 0 0 10px 3px rgba(39, 174, 96, 0.7); /* Iluminación verde */
+}
+
+.documentos-link {
+    background-color: var(--color-documentos);
+}
+
+.documentos-link:hover {
+    box-shadow: 0 0 10px 3px rgba(243, 156, 18, 0.7); /* Iluminación naranja */
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.7rem 1.2rem; /* Aumentado el padding del input */
+    border: none;
+    border-radius: 30px 0 0 30px;
+    font-size: 1rem;
+    outline: none;
+    color: var(--gris-oscuro);
+    flex-grow: 1; /* Permite que el input crezca para ocupar espacio */
+}
+
+.search-bar button[type="button"] {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    border: none;
+    padding: 0.7rem 1.2rem; /* Aumentado el padding del botón */
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.search-bar button[type="button"]:hover {
+    background-color: var(--azul-profundo);
+}
+
+.search-bar i {
+    font-size: 1rem;
+}
+
+/* Estilos para el menú desplegable de Documentos */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--naranja-institucional);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none; /* Oculto por defecto */
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    color: var(--blanco);
+    transition: background-color 0.3s;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Portada */
+.hero {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 120px 20px; /* Aumentado el padding vertical */
+    position: relative; /* Para el pseudo-elemento */
+    min-height: 500px; /* Aumentado la altura mínima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 90%; /* El contenido ocupa un porcentaje del ancho para ser más responsivo */
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem; /* Aumentado el tamaño del título */
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2.1rem; /* Aumentado el tamaño del subtítulo */
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.competencias {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px; /* Aumentado el padding del bloque de competencias */
+    border-radius: 10px;
+    text-align: left;
+    margin: 40px auto; /* Aumentado el margen y centrado */
+    max-width: 700px; /* Aumentado el ancho máximo */
+}
+
+.competencias h3 {
+    font-size: 2rem; /* Aumentado el tamaño del título de competencias */
+    margin-bottom: 15px;
+    color: var(--turquesa);
+}
+
+.competencias h4 {
+    font-size: 1.3rem; /* Aumentado el tamaño del subtítulo de competencias */
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: var(--verde-menta);
+}
+
+.competencias ul {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+.competencias li {
+    margin-bottom: 10px;
+    font-size: 1.1rem; /* Aumentado el tamaño de los ítems de la lista */
+}
+
+/* Contenido Educativo */
+.contenido-educativo {
+    max-width: 1200px; /* Aumentado el ancho máximo para laptops */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.seccion-contenido {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.seccion-contenido:last-child {
+    border-bottom: none;
+}
+
+.titulo-seccion {
+    color: var(--azul-profundo);
+    font-size: 2.5rem; /* Aumentado el tamaño del título de sección */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--turquesa);
+    font-size: 1.8rem; /* Aumentado el tamaño del subtítulo */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.texto-contenido {
+    line-height: 2; /* Aumentado el espaciado entre líneas */
+    margin-bottom: 20px;
+    font-size: 1.1rem; /* Aumentado el tamaño del texto */
+}
+
+.contenedor-media {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.imagen-contenido {
+    max-width: 80%; /* La imagen ocupa un porcentaje del contenedor */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.video-contenido {
+    width: 80%; /* El video ocupa un porcentaje del contenedor */
+    max-width: 960px; /* Aumentado el ancho máximo del video */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.lista-temas {
+    list-style: none;
+    padding-left: 30px;
+}
+
+.lista-temas li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.1rem; /* Aumentado el tamaño de los ítems de la lista */
+}
+
+.lista-temas li::before {
+    content: "\f0da"; /* Código Unicode para una flecha */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: var(--turquesa);
+}
+
+.nota-importante {
+    background-color: #f9f0d7;
+    border: 1px solid #e0c8a4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.nota-importante h4 {
+    color: var(--naranja-institucional);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.nota-importante p {
+    font-size: 1.1rem;
+}
+
+/* Documentos Descargables */
+.documentos-section {
+    max-width: 1200px; /* Aumentado el ancho máximo para laptops */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--gris-claro);
+}
+
+.documentos-container {
+    background-color: var(--blanco);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.documentos-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--azul-profundo);
+}
+
+.documentos-header i {
+    margin-right: 15px;
+    font-size: 1.8rem;
+}
+
+.documentos-header h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.documentos-list {
+    padding: 0;
+    list-style: none;
+}
+
+.documento-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.documento-item:last-child {
+    border-bottom: none;
+}
+
+.documento-info {
+    display: flex;
+    align-items: center;
+}
+
+.documento-icono {
+    font-size: 1.4rem;
+    margin-right: 12px;
+    color: var(--rojo-pdf); /* Color por defecto para PDF */
+}
+
+.documento-info i.fa-file-video {
+    color: var(--verde-menta);
+}
+
+.documento-info i.fa-file-code {
+    color: var(--turquesa);
+}
+
+.documento-info i.fa-chalkboard-teacher,
+.documento-info i.fa-users {
+    color: var(--naranja-institucional);
+}
+
+.documento-nombre {
+    font-weight: bold;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.documento-meta {
+    color: var(--gris-oscuro);
+    font-size: 1rem;
+}
+
+.documento-acciones .btn-descargar {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.documento-acciones .btn-descargar:hover {
+    background-color: var(--azul-profundo);
+}
+
+.documento-acciones .btn-descargar i {
+    margin-right: 5px;
+}
+
+/* Estilos para el botón de volver */
+.btn-volver {
+    background-color: #27AE60;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-volver:hover {
+    background-color:#70E000
+}
+
+/* Footer */
+footer {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 30px;
+    font-size: 1rem;
+}
+
+.footer-content {
+    max-width: 1400px; /* Aumentado para laptops */
+    margin: 0 auto;
+    padding: 0 20px; /* Añadido padding horizontal */
+}
+
+/* Estilo para el resaltado de la búsqueda (opcional) */
+.highlight {
+    background-color: var(--dorado);
+    color: var(--gris-oscuro);
+    font-weight: bold;
+}
+
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar input[type="text"] {
+        border-radius: 30px;
+    }
+
+    .search-bar button[type="button"] {
+        border-radius: 30px;
+        margin-left: 0.5rem; /* Espacio entre input y botón */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .competencias {
+        padding: 15px;
+    }
+
+    .competencias h3 {
+        font-size: 1.6rem;
+    }
+
+    .contenido-educativo,
+    .documentos-section {
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+
+    .subtitulo {
+        font-size: 1.4rem;
+    }
+
+    .texto-contenido,
+    .lista-temas li,
+    .nota-importante p,
+    .documento-nombre,
+    .documento-meta,
+    .documento-acciones .btn-descargar {
+        font-size: 1rem;
+    }
+
+    .contenedor-media iframe,
+    .contenedor-media img,
+    .contenedor-media video {
+        width: 100%;
+        height: auto;
+    }
+
+    .documentos-container {
+        padding: 15px;
+    }
+
+    .documentos-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .documento-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 10px 0;
+    }
+
+    .documento-acciones {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Estilos para el menú desplegable en pantallas pequeñas */
+    .dropdown-menu {
+        position: static;
+        display: none; /* Oculto por defecto en móviles */
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        border-bottom: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-bottom: 0.2rem;
+        border-radius: 5px;
+    }
+}
+/* Aquí pega todo el contenido de tu archivo styles.css original */
+
+/* Asegúrate de tener estas reglas para el menú desplegable (si no las tienes) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--naranja-institucional);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 10;
+    min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    color: var(--blanco);
+    transition: background-color 0.3s;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Estilos para mostrar/ocultar secciones con :target */
+.contenido-educativo,
+.documentos-section {
+    display: none;
+}
+
+#hero {
+    display: block;
+}
+
+:target {
+    display: block !important;
+}
+
+/* ... (tu otro CSS) ... */
+
+/* Estilos para la sección de explicación del proyecto */
+.explicacion-proyecto {
+    background-color: #f8f8f8; /* Un color gris claro diferente al fondo del hero */
+    padding: 40px 20px; /* Espaciado interior */
+    text-align: center; /* Centrar el texto (opcional) */
+}
+
+.explicacion-proyecto .seccion-contenido {
+    max-width: 960px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.explicacion-proyecto .titulo-seccion {
+    color: var(--azul-institucional); /* Un color distintivo para el título */
+    margin-bottom: 20px;
+}
+
+.explicacion-proyecto h3 {
+    color: var(--naranja-institucional); /* Otro color para los subtítulos */
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.explicacion-proyecto .texto-contenido {
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    margin-bottom: 15px;
+    text-align: left; /* Alinear el texto a la izquierda para párrafos */
+}
+
+.explicacion-proyecto .lista-temas {
+    list-style-type: disc;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.explicacion-proyecto .contenedor-media {
+    margin: 30px auto;
+    max-width: 500px; /* Ancho máximo para la imagen */
+}
+
+.explicacion-proyecto .imagen-contenido {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para la imagen (opcional) */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave (opcional) */
+}
+
+
+/* Animación robusta y colorida para el título de la escuela */
+.hero-content h1 {
+    transition: transform 0.3s ease; /* Transición para el tamaño */
+    cursor: pointer;
+    animation: rainbow-text 5s infinite alternate; /* Animación de cambio de color */
+}
+
+
+/* Ocultar la sección Hero cuando se selecciona un parcial o la página de documentos (Alternativa) */
+body:has(#parcial-1:target) #hero,
+body:has(#parcial-2:target) #hero,
+body:has(#parcial-3:target) #hero,
+body:has(#documentos-parcial1-page:target) #hero,
+body:has(#documentos-parcial2-page:target) #hero,
+body:has(#documentos-parcial3-page:target) #hero {
+    display: none !important;
+}
+
+/* Ocultar la sección Explicación del Proyecto cuando se selecciona un parcial o la página de documentos */
+body:has(#parcial-1:target) #explicacion-proyecto,
+body:has(#parcial-2:target) #explicacion-proyecto,
+body:has(#parcial-3:target) #explicacion-proyecto,
+body:has(#documentos-parcial1-page:target) #explicacion-proyecto,
+body:has(#documentos-parcial2-page:target) #explicacion-proyecto,
+body:has(#documentos-parcial3-page:target) #explicacion-proyecto {
+    display: none !important;
+}
+
+.contenedor {
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.servicio {
+    margin-bottom: 20px; /* Espacio entre los servicios */
+}
+
+.titulo {
+    font-size: 1.5em; /* Tamaño de letra más grande para los títulos */
+    font-weight: bold; /* Negrita para los títulos */
+    color: black; /* Color negro para los títulos */
+}
+
+.descripcion {
+    text-align: justify; /* Justifica el texto de la descripción */
+    color: black; /* Color negro para la descripción */
+}
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no superen el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+.titulo-video1 {
+    text-align: center;
+}
+
+.contenido-principal {
+    text-align: justify; /* Justifica el texto principal */
+    color: black; /* Color negro para el texto principal */
+}
+
+.titulo-p {
+    font-size: 1.2em; /* Tamaño de fuente más grande para los títulos */
+    font-weight: bold; /* Negrita para los títulos */
+    display: block; /* Para que cada título esté en una línea separada */
+    margin-top: 15px; /* Espacio entre los títulos y el texto */
+}
+
+.imagen-contenido {
+    display: flex; /* Convierte el contenedor en un contenedor Flexbox */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Opcional: Si quieres que la imagen se ajuste al tamaño del contenedor */
+.imagen-contenido img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-height: 100%; /* Asegura que la imagen no exceda la altura del contenedor */
+    object-fit: contain; /* Ajusta la imagen manteniendo su relación de aspecto */
+    height: auto;
+    object-fit: contain;
+}
+
+.servicio {
+    display: flex; /* Convierte el div en un contenedor flexible */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    border: 1px solid #ccc; /* Opcional: Añade un borde para visualizar la caja */
+    padding: 15px; /* Opcional: Añade un poco de espacio interno */
+    margin-bottom: 15px; /* Opcional: Añade margen inferior si tienes varios servicios */
+}
+
+.servicio img {
+    width: 150px; /* Ajusta el ancho de la imagen según necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse, manteniendo su proporción */
+}
+
+.servicio .descripcion {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.servicio .titulo {
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    margin-bottom: 10px; /* Espacio entre el título y la imagen/descripción */
+    text-align: center; /* Opcional: Centra el título */
+}
+
+
+
+.explicacion-proyecto {
+    width: 100%; /* O la medida que necesites para el ancho de tu caja */
+    height: auto; /* Ajusta la altura según el contenido o la que necesites */
+    position: relative; /* Necesario para posicionar la capa gris */
+    background-image: url(s1.jpeg); /* Reemplaza con la URL de tu imagen */
+    background-size: cover; /* Escala la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+.explicacion-proyecto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90); /* Capa gris semi-transparente (ajusta la opacidad) */
+    z-index: 1; /* Asegura que la capa gris esté encima de la imagen */
+}
+
+/* Si tienes texto directamente dentro de .explicacion-proyecto que quieres que esté encima */
+.explicacion-proyecto > * {
+    position: relative; /* Permite que el z-index funcione */
+    z-index: 2; /* Asegura que el texto esté encima de la capa gris */
+    color: white; /* O el color de texto que necesites */
+    /* Otros estilos para tu texto */
+}
+
+
+.subtitulo3 {
+    text-align: center;
+}
+
+
+/* Animación de borde de página */
+body {
+    /* ... otros estilos del body ... */
+    border: 3px solid transparent; /* Inicialmente borde transparente */
+    animation: animatedBorder 10s linear infinite; /* Aplica la animación */
+}
+
+@keyframes animatedBorder {
+    0% { border-color: #29abe2; /* Azul claro */ }
+    25% { border-color: #8e44ad; /* Morado */ }
+    50% { border-color: #27ae60; /* Verde */ }
+    75% { border-color: #f39c12; /* Naranja */ }
+    100% { border-color: #29abe2; /* Vuelve al azul */ }
+}
+
+/* Animaciones para la sección Parcial 1 */
+#parcial-1 .seccion-contenido {
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#parcial-1 .titulo-seccion {
+    animation: pulse 2s ease-in-out infinite alternate; /* Animación de pulsación */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+#parcial-1 .subtitulo {
+    animation: slideInLeft 1s ease-out forwards; /* Animación de deslizamiento desde la izquierda */
+    opacity: 0;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#parcial-1 .texto-contenido {
+    animation-delay: 0.3s; /* Retraso para la animación */
+    animation: slideInRight 1s ease-out forwards; /* Animación de deslizamiento desde la derecha */
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#parcial-1 .lista-temas li {
+    animation: slideUp 0.5s ease-out forwards; /* Animación de deslizamiento hacia arriba */
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Aplica la animación de slideUp con un pequeño retraso a cada elemento de la lista */
+#parcial-1 .lista-temas li:nth-child(1) { animation-delay: 0.5s; }
+#parcial-1 .lista-temas li:nth-child(2) { animation-delay: 0.7s; }
+#parcial-1 .lista-temas li:nth-child(3) { animation-delay: 0.9s; }
+
+#parcial-1 .imagen-contenido {
+    animation: zoomIn 1s ease-out forwards; /* Animación de zoom */
+    opacity: 0;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Color de fondo antes de las 9 herramientas */
+.contenido-educativo > .seccion-contenido > .contenedor:nth-child(16) { /* Ajusta el nth-child según la posición real en tu HTML */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo oscuro RGB */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+/* Estilos para resaltar el texto de las 9 herramientas al pasar el mouse */
+.contenedor .servicio {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Añadimos transición al color del texto */
+    border: 1px solid transparent; /* Borde transparente por defecto */
+}
+
+.contenedor .servicio:hover {
+    transform: scale(1.02);
+    border-color: #3498db; /* Borde azul claro */
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.7); /* Sombra azul clara */
+    /* Resaltar ligeramente el texto */
+    color: #a7d1eb; /* Un tono de azul más claro para el texto */
+}
+
+/* Animaciones de borde de color para el título y el video */
+.titulo-video1 {
+    margin-bottom: 20px;
+    border: 2px solid transparent; /* Borde inicial transparente */
+    border-radius: 5px; /* Opcional: esquinas redondeadas */
+    padding: 10px; /* Opcional: espacio alrededor del texto */
+    animation: animatedBorderVideoTitle 5s linear infinite, slideInDown 1s ease-out forwards; /* Ambas animaciones */
+}
+
+@keyframes animatedBorderVideoTitle {
+    0% { border-color: rgba(255, 255, 0, 0.8); } /* Amarillo */
+    50% { border-color: rgba(0, 255, 255, 0.8); } /* Cian */
+    100% { border-color: rgba(255, 0, 255, 0.8); } /* Magenta */
+}
+
+.contenedor-media {
+    margin-bottom: 30px;
+    border: 3px solid transparent; /* Borde inicial transparente */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    animation: animatedBorderVideo 7s linear infinite, fadeInScale 1.2s ease-out forwards; /* Ambas animaciones */
+}
+
+@keyframes animatedBorderVideo {
+    0% { border-color: rgba(127, 255, 0, 0.7); } /* Verde lima */
+    33% { border-color: rgba(0, 128, 255, 0.7); } /* Azul */
+    66% { border-color: rgba(255, 0, 128, 0.7); } /* Rosa */
+    100% { border-color: rgba(127, 255, 0, 0.7); } /* Vuelve al verde lima */
+}
+
+/* Animaciones para la sección Parcial 2 */
+#parcial-2 .seccion-contenido {
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+#parcial-2 .titulo-seccion {
+    animation: pulse 2s ease-in-out infinite alternate; /* Animación de pulsación */
+}
+
+#parcial-2 .subtitulo {
+    animation: slideInLeft 1s ease-out forwards; /* Animación de deslizamiento desde la izquierda */
+    opacity: 0;
+}
+
+#parcial-2 .texto-contenido {
+    animation-delay: 0.3s; /* Retraso para la animación */
+    animation: slideInRight 1s ease-out forwards; /* Animación de deslizamiento desde la derecha */
+    opacity: 0;
+}
+
+#parcial-2 .lista-temas li {
+    animation: slideUp 0.5s ease-out forwards; /* Animación de deslizamiento hacia arriba */
+    opacity: 0;
+}
+
+/* Aplica la animación de slideUp con un pequeño retraso a cada elemento de la lista */
+#parcial-2 .lista-temas li:nth-child(1) { animation-delay: 0.5s; }
+#parcial-2 .lista-temas li:nth-child(2) { animation-delay: 0.7s; }
+#parcial-2 .lista-temas li:nth-child(3) { animation-delay: 0.9s; }
+
+#parcial-2 .imagen-contenido {
+    animation: zoomIn 1s ease-out forwards; /* Animación de zoom */
+    opacity: 0;
+}
+
+/* Animaciones para la sección Parcial 3 */
+#parcial-3 .seccion-contenido {
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+#parcial-3 .titulo-seccion {
+    animation: pulse 2s ease-in-out infinite alternate; /* Animación de pulsación */
+}
+
+#parcial-3 .subtitulo {
+    animation: slideInLeft 1s ease-out forwards; /* Animación de deslizamiento desde la izquierda */
+    opacity: 0;
+}
+
+#parcial-3 .texto-contenido {
+    animation-delay: 0.3s; /* Retraso para la animación */
+    animation: slideInRight 1s ease-out forwards; /* Animación de deslizamiento desde la derecha */
+    opacity: 0;
+}
+
+#parcial-3 .lista-temas li {
+    animation: slideUp 0.5s ease-out forwards; /* Animación de deslizamiento hacia arriba */
+    opacity: 0;
+}
+
+/* Aplica la animación de slideUp con un pequeño retraso a cada elemento de la lista */
+#parcial-3 .lista-temas li:nth-child(1) { animation-delay: 0.5s; }
+#parcial-3 .lista-temas li:nth-child(2) { animation-delay: 0.7s; }
+#parcial-3 .lista-temas li:nth-child(3) { animation-delay: 0.9s; }
+
+#parcial-3 .imagen-contenido {
+    animation: zoomIn 1s ease-out forwards; /* Animación de zoom */
+    opacity: 0;
+}
+
+/* Estilos para los elementos del desplegable de documentos */
+.dropdown .dropdown-menu li:nth-child(1) a { /* Estilo para "Documentos de 1 parcial" */
+    background-color: #3498db; /* Azul */
+    color: white;
+  }
+  
+  .dropdown .dropdown-menu li:nth-child(2) a { /* Estilo para "Documentos de 2 parcial" */
+    background-color: #601ed2ae; /* Verde */
+    color: white;
+  }
+  
+  .dropdown .dropdown-menu li:nth-child(3) a { /* Estilo para "Documentos de 3 parcial" */
+    background-color: #25e622; /* Naranja */
+    color: white;
+  }
+  
+  .dropdown .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .dropdown .dropdown-menu a:hover {
+    opacity: 0.8; /* Ligera transparencia al pasar el ratón */
+  }
+
+  .extension {
+    text-align: center;
+  }
+
+  .contenedor-encerrado {
+    border: 1px solid #ccc; /* Añade un borde de 1 píxel, sólido y de color gris claro (#ccc) */
+    padding: 15px; /* Añade un espacio interno de 15 píxeles alrededor del contenido */
+    margin-bottom: 15px; /* Opcional: Añade un margen inferior para separarlo de otros elementos */
+    /* Otros estilos que podrías querer añadir: */
+    /* border-radius: 5px; /* Para redondear las esquinas del borde */
+    /* background-color: #f9f9f9; /* Para darle un color de fondo suave */
+    /* box-shadow: 2px 2px 5px #888888; /* Para añadir una ligera sombra */
+}
+
+.dropdown-menu a {
+    border-radius: 10px; /* Ajusta este valor para controlar el redondeo de las esquinas */
+    padding: 6px 12px; /* Opcional: Añade un poco de espacio dentro del enlace para que parezca más un botón */
+    display: block; /* Opcional: Hace que cada enlace ocupe todo el ancho de su contenedor li */
+    text-decoration: none; /* Opcional: Elimina el subrayado de los enlaces */
+    /* Otros estilos que quieras aplicar a los enlaces del menú desplegable */
+  }
+  
+  
+
+  /* Estilos para pantallas más grandes (ej: escritorio) - Si ya tienes esto, no lo dupliques */
+.documento-item .documento-info {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el icono y el texto */
+}
+
+.documento-icono-inline {
+    font-size: 0.9rem;
+    margin-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Media query para pantallas más pequeñas (ej: celulares - ancho máximo de 768px) */
+@media (max-width: 768px) {
+    .documento-item .documento-info {
+        display: flex;
+        flex-direction: column; /* Alinea los elementos en columna (uno encima del otro) */
+        align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    }
+
+    .documento-icono-inline {
+        margin-right: 0; /* Elimina el margen derecho que tenías para la alineación horizontal */
+        margin-bottom: 5px; /* Añade un margen inferior para separar el icono del texto */
+        display: inline-block; /* Mantiene el comportamiento en línea para el tamaño */
+        vertical-align: top; /* Alinea el icono en la parte superior del bloque */
+    }
+}
+
+/* Estilos generales para pantallas más grandes */
+.icono-menu {
+    display: none; /* Oculta el icono del menú en pantallas grandes */
+}
+
+.menu-principal {
+    display: flex; /* Muestra los botones en fila */
+    justify-content: space-around; /* Distribuye el espacio entre los botones */
+    /* Otros estilos para los botones en escritorio */
+}
+
+.boton-principal {
+    /* Estilos comunes para los botones */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Media query para pantallas más pequeñas (ancho máximo de 768px) */
+@media (max-width: 768px) {
+    .menu-principal {
+        display: none; /* Oculta los botones principales por defecto en pantallas pequeñas */
+        flex-direction: column; /* Muestra los botones en columna cuando el menú esté abierto */
+        background-color: #333; /* Fondo del menú móvil */
+        position: absolute; /* Posiciona el menú sobre el contenido */
+        top: 60px; /* Ajusta según la altura de tu header */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-principal.abierto { /* Clase para mostrar el menú con JavaScript */
+        display: flex;
+    }
+
+    .boton-principal {
+        display: block; /* Hace que los botones ocupen todo el ancho */
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 0;
+        background-color: #555;
+        color: white;
+    }
+
+    .icono-menu {
+        display: block; /* Muestra el icono del menú en pantallas pequeñas */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .icono-menu span {
+        display: block;
+        height: 3px;
+        background-color: #333; /* Color del icono */
+        margin: 5px 0;
+    }
+}
+
+.resumen {
+    text-align: justify;
+    background-color: #fcffff;
+    font-size: 1.2rem;
+
+}
+
+.hero-content h1:hover {
+    transform: scale(1.1); /* Agranda el título al pasar el cursor */
+    text-shadow: 2px 2px 10px rgba(225, 225, 187, 0.8); /* Añade una sombra amarilla brillante */
+}
+
+.competencias:hover {
+    transform: scale(1.1); /* Agranda el título al pasar el cursor */
+    box-shadow: #333;
+    
+
+}
+
+.dropdown-menu li a.dropdown-link {
+    display: block;
+    padding: 10px 20px; /* Aumenta el padding horizontal para hacerlos más anchos */
+    margin-bottom: 5px;
+    background-color: rgba(108, 117, 125, 0.8); /* Ejemplo de color RGB (grisáceo) con algo de transparencia */
+    border: 1px solid rgba(108, 117, 125, 1); /* Borde del mismo color */
+    border-radius: 20px; /* Aumenta el radio del borde para hacerlos más ovalados */
+    text-decoration: none;
+    color: white; /* Un color de texto que contraste bien (blanco en este ejemplo) */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.dropdown-menu li a.dropdown-link:hover {
+    background-color: rgba(86, 95, 102, 0.9); /* Un tono ligeramente más oscuro al pasar el ratón */
+}
+
+/* Estilos para los botones principales (Parcial 1, Parcial 2, Parcial 3, Encuadre, Materiales) */
+.nav-menu > li > a.nav-links {
+    display: block;
+    padding: 10px 20px; /* Más padding horizontal para hacerlos más ovalados */
+    margin-right: 5px;
+    background-color: rgba(173, 216, 230, 0.8); /* Azul claro */
+    border: 2px solid transparent;
+    border-radius: 20px; /* Bordes más redondeados para forma ovalada */
+    color: #333; /* Color de texto oscuro para contraste */
+    text-decoration: none;
+    text-align: center;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.nav-menu > li > a.nav-links::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px; /* Igual que el radio del botón */
+    background: linear-gradient(to right, #6495ED, #ADD8E6, #87CEFA, #6495ED); /* Degradado de tonos azules para el borde animado */
+    background-size: 200% 100%;
+    z-index: -1;
+    animation: animated-border 5s linear infinite;
+}
+
+@keyframes animated-border {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.nav-menu > li > a.nav-links:hover {
+    background-color: rgba(173, 216, 230, 1); /* Azul claro ligeramente más intenso al pasar el ratón */
+    color: #222; /* Oscurecer un poco el texto al pasar el ratón */
+}
+
+.nav-menu > li > a.nav-links:hover::before {
+    background: linear-gradient(to right, #4169E1, #87CEEB, #6495ED, #4169E1); /* Otro degradado de azules para el hover */
+    animation-duration: 3s; /* Animación más rápida al pasar el ratón */
+}
+
+/* Estilos para la caja del menú desplegable */
+.dropdown-menu {
+    background-color: rgba(69, 97, 106, 0.95); /* Azul claro ligeramente más oscuro */
+    border: 1px solid rgba(135, 206, 235, 1); /* Borde azul cielo claro */
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    min-width: 150px;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para los botones dentro del menú desplegable (Actividades, Encuadre, Materiales) */
+.dropdown-menu li a.dropdown-link {
+    display: block;
+    padding: 10px 20px; /* Mismo padding para consistencia */
+    margin-bottom: 5px;
+    background-color: rgba(173, 216, 230, 0.8); /* Azul claro */
+    border: 1px solid rgba(135, 206, 235, 1); /* Borde azul cielo claro */
+    border-radius: 20px; /* Bordes redondeados para forma ovalada */
+    text-decoration: none;
+    color: #333;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dropdown-menu li a.dropdown-link:hover {
+    background-color: rgba(135, 206, 235, 0.9); /* Azul cielo ligeramente más oscuro al pasar el ratón */
+    color: #222; /* Oscurecer un poco el texto al pasar el ratón */
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown-menu li a.dropdown-link { background-color: rgba(173, 216, 230, 0.8); border: 1px solid rgba(135, 206, 235, 1); }
+
+.navbar {
+    position: static !important;
+}

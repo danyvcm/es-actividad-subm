@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBTIS 251 - Submódulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logot.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.ico" alt="CBTIS 251">
+                <span>Grupo 403</span>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar en documentos...">
+                <button type="button" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#parcial-1" class="nav-links parcial-1-link">Parcial 1</a></li>
+                <li><a href="#parcial-2" class="nav-links parcial-2-link">Parcial 2</a></li>
+                <li><a href="#parcial-3" class="nav-links parcial-3-link">Parcial 3</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-links documentos-link">Actividades <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#documentos-parcial1-page" class="dropdown-link" data-parcial="1">Actividades 1° parcial</a></li>
+                        <li><a href="#documentos-parcial2-page" class="dropdown-link" data-parcial="2">Actividades 2  parcial</a></li>
+                        <li><a href="#documentos-parcial3-page" class="dropdown-link" data-parcial="3">Actividades 3° parcial</a></li>
+                        <li><a href="ENCUADRE.pdf" class="dropdown-link">Encuadre</a></li>
+                        <li><a href="Manual del Estudiante.pdf" class="dropdown-link">Materiales</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 251</h1>
+            <h2>Submódulo 1: Gestiona información mediante el uso de software en línea</h2>
+            <div class="competencias">
+                <h3>Competencias esperadas</h3>
+                <p>Gestiona información mediante el uso de software en línea</p>
+                <h4>COMPETENCIAS ESPECÍFICAS</h4>
+                <ul>
+                    <li>Genera y almacena documentos en línea</li>
+                    <li>Convierte documentos en línea</li>
+                    <li>Importa e imprime documentos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="explicacion-proyecto" id="explicacion-proyecto">
+        <div class="seccion-contenido">
+            <h2 class="titulo-seccion">Razon por la cual se creo el sitio web</h2>
+            <p class="texto-contenido">
+                Este sitio web ha sido creado con el propósito de centralizar y organizar toda la información vista en el submódulo Gestiona información mediante software en línea, permitiendo a los estudiantes reforzar su aprendizaje y aplicar sus conocimientos obtenidos en clase. se ha hemos trabajado con diversas herramientas digitales para la gestión de información en linea, asi como con herramientas para la conversion de archivos, y en este sitio consultar temas, actividades y recursos utilizados en clase.
+
+            </p>
+
+            <h3>Nuestros objetivos principales</h3>
+            <ul class="lista-temas">
+                <li>Aplicar los conocimientos en el uso de software en línea mediante la práctica.</li>
+                <li>Ofrecer acceso directo a materiales y actividades relevantes para cada parcial del submódulo.</li>
+                <li>Documentar y reforzar los conocimientos adquiridos en clase.</li>
+            </ul>
+
+            <p class="texto-contenido">
+                A través de este sitio, los alumnos podrán encontrar información detallada, recursos multimedia y enlaces a documentos importantes que complementarán su aprendizaje en el aula. Buscamos crear un entorno virtual que fomente la autonomía y el interés por la tecnología.
+            </p>
+
+         <!--   <div class="contenedor-media">
+                <img src="online2.jpg" alt="Imagen representativa del proyecto" class="imagen-contenido">
+            </div> -->
+
+            <p class="texto-contenido">
+                Esperamos que este proyecto sea de gran utilidad para tu proceso de aprendizaje. ¡Explora los contenidos y no dudes en contactar a tu profesor si tienes alguna pregunta!
+            </p>
+        </div>
+    </section>
+
+    <section class="contenido-educativo" id="parcial-1">
+        <div class="seccion-contenido">
+            <h2 class="titulo-seccion">Parcial 1: Fundamentos de la Computación en la Nube</h2>
+            <h3 class="subtitulo">¿Qué es la computación en la nube?</h3>
+            <p class="texto-contenido">
+                La computación en la nube es un modelo que permite el acceso bajo demanda a recursos compartidos de computación (redes, servidores, almacenamiento, aplicaciones y servicios) a través de Internet. Este paradigma tecnológico ha revolucionado la forma en que las empresas y usuarios acceden a los recursos informáticos, eliminando la necesidad de mantener infraestructura física local.
+            </p>
+            <div class="contenedor-media">
+            </div>
+            <h3 class="subtitulo">Modelos de servicio en la nube</h3>
+            <p class="texto-contenido">
+                La computación en la nube ofrece tres modelos principales de servicio, cada uno con diferentes niveles de control, flexibilidad y gestión:
+            </p>
+            <ul class="lista-temas">
+                <li><strong>Infraestructura como Servicio (IaaS):</strong> Proporciona recursos informáticos fundamentales como máquinas virtuales, almacenamiento y redes. Ejemplos: AWS EC2, Google Compute Engine.</li>
+                <li><strong>Plataforma como Servicio (PaaS):</strong> Ofrece entornos para desarrollar, probar y administrar aplicaciones sin preocuparse por la infraestructura subyacente. Ejemplos: Google App Engine, Microsoft Azure.</li>
+                <li><strong>Software como Servicio (SaaS):</strong> Aplicaciones completas alojadas en la nube y accesibles a través de un navegador web. Ejemplos: Google Workspace, Microsoft 365.</li>
+            </ul>
+            <img src="nubes.jpg" alt="Computación en la nube" class="imagen-contenido">
+            <div class="nota-importante">
+                <h4>Dato importante</h4>
+                <p>El almacenamiento en la nube ha crecido de manera significativa y se espera que sea una de las soluciones más utilizadas en los próximos años. Según un informe de Forbes, se estima que para 2025 el 80% de las empresas usarán servicios en la nube para gestionar sus datos, lo que refleja un cambio hacia una infraestructura más flexible y escalable. <a href="https://findstack.es/resources/cloud-computing-statistics">Mas información aqui</a> </p>
+            </div>
+            <h3 class="subtitulo">Ventajas de la computación en la nube</h3>
+            <p class="texto-contenido">
+                La adopción de la computación en la nube ofrece numerosas ventajas para organizaciones y usuarios individuales:
+            </p>
+            <ul class="lista-temas">
+                <li><strong>Reducción de costos:</strong> Elimina gastos de capital en hardware y software</li>
+                <li><strong>Escalabilidad:</strong> Capacidad de ajustar recursos según demanda</li>
+                <li><strong>Acceso global:</strong> Disponibilidad desde cualquier lugar con internet</li>
+                <li><strong>Automatización de actualizaciones:</strong> Mantenimiento gestionado por el proveedor</li>
+                <li><strong>Continuidad del negocio:</strong> Copias de seguridad y recuperación ante desastres</li>
+            </ul>
+        </br>
+        </br>
+            <div class="contenedor">
+                <h1>A continuacion se presentan 9 de las herramientas mas populares y mas utlizadas para almacenamiento en la nube</h1>
+                <div class="servicio">
+                    
+                    
+                    <p class="descripcion"> <strong>  Google Drive: </strong> es posiblemente el servicio de almacenamiento en la nube gratuito más popular. Ofrece 15 GB de espacio, compartido con otros servicios de Google como Gmail y Google Fotos. Accesible desde cualquier navegador.</p>
+                    <img src="drive.jpeg" alt="Google Drive">
+                </div>
+            
+                <div class="servicio">
+            
+                    <p class="descripcion"> <strong>Microsoft OneDrive:</strong> el principal competidor de Google, también ofrece almacenamiento en la nube gratuito a través de OneDrive. Con 5 GB de espacio independiente, OneDrive suele venir preinstalado en Windows y cuenta con aplicaciones móviles para acceder a tus archivos desde cualquier lugar.</p>
+                    <img src="onedrive.png" alt="Microsoft OneDrive">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>iCloud</strong> el servicio de Apple, ofrece 5 GB gratuitos para usuarios de dispositivos Apple, ideal para guardar fotos, vídeos y documentos. Su sincronización entre dispositivos Apple es excelente. Las opciones de pago van desde 50 GB por 0,99 € al mes hasta 2 TB por 9,99 € al mes.</p>
+                    <img src="icloud.jpeg" alt="iCloud">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>Mega</strong> destaca por ofrecer 20 GB de almacenamiento gratuito, el mayor espacio de esta lista. Con aplicaciones para todos los sistemas operativos, incluyendo Linux, Si necesitas más espacio, puedes contratar desde 2 TB por 9,99 € al mes hasta 16 TB por 29,99 € al mes.</p>
+                    <img src="mega3.png" alt="MEGA">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>Dropbox </strong> uno de los pioneros en almacenamiento en la nube gratuito, ofrece 2 GB de espacio. Aunque puede parecer poco, es útil para documentos y archivos pequeños. Dropbox ofrece planes de pago desde 2 TB por 11,99 € al mes hasta 5 TB por 14,50 € al mes.</p>
+                     <img src="dropbox.jpeg" alt="Dropbox">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>Media Fire: </strong> ofrece 10 GB de almacenamiento gratuito con solo crear una cuenta. Sin embargo, solo es accesible desde el navegador, aunque cuenta con aplicaciones móviles. Puedes ampliar el espacio a 1 TB por 6,99 € al mes.</p>
+                    <img src="medifire.png" alt="MediaFire">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>IceDrive</strong>  ofrece 10 GB de almacenamiento gratuito con integración total en Windows y aplicaciones para macOS, Linux y dispositivos móviles. Destaca por su baja latencia y sincronización instantánea. Las opciones de pago van desde 150 GB por mes.</p>
+                    <img src="icedrive2.png" alt="IceDrive">
+                </div>
+            
+                <div class="servicio">
+                    <p class="descripcion"> <strong>pCloud</strong> ofrece 10 GB gratuitos y destaca por su seguridad, con sede en Suiza. Cuenta con extensiones para navegadores y planes de pago desde 500 GB por 49,99 € al año hasta 2 TB por 99,99 € al año. También ofrece planes de por vida, como 500 GB por 199 € o 2 TB por 399 €. <br> <a href="https://www.pccomponentes.com/almacenamiento-nube-gratis-mejores-servicios?srsltid=AfmBOooQ85PZQ1Ufz36g2MzxAF9e6FRCTnz1Z2WPMMts0JHpwkmXgHbq">Click aqui para mas información</a> </p>
+                    <img src="pcloud2.png" alt="pCloud">
+                </div>
+            </div>
+            <h3 class="titulo-video1">Conceptos basicos de la nube</h3>
+            <div class="contenedor-media">
+                <video controls width="1500" height="560">
+                    <source src="lanube.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+        <div class="resumen">
+            <p class="resumen">Después de haber revisado los conceptos fundamentales sobre la nube y explorado algunas herramientas para la creación de videos, pusimos en práctica los conocimientos adquiridos para crear un video acerca de los valores éticos. Utilizamos la herramienta FlexClip, una plataforma accesible y fácil de usar, ideal para proyectos colaborativos y educativos, para producir el video que explica los valores éticos de manera clara y visual. <a href="https://drive.google.com/file/d/1llH72lHhRV0GuDUgHUkluBDKT_qUyEv-/view?usp=drivesdk">Ver video <br> <br> </a><br>
+            <p class="eticos">Ademas tambien se creo un documento acerca de los valores éticos, usando la herramienta google docs, donde se abordaron los siguientes temas<strong class="valores"> ¿Qué son los valores éticos y morales?, Causas y motivos por lo cual se han perdido los valores, y los valores mas conocidos, </strong>Los valores  permiten una mejor convivencia social, ya que fomentan la confianza, la empatía, la solidaridad y el respeto mutuo. En la escuela, por ejemplo, ayudan a mantener un ambiente sano donde los estudiantes pueden desarrollarse de manera integral. En la sociedad, promueven la justicia, el entendimiento y la paz. Entre los valores éticos más populares se encuentran el respeto, la honestidad, la responsabilidad, la solidaridad, la empatía, la justicia, la lealtad y la tolerancia. Estos valores son universales y aplicables en todas las culturas. Se manifiestan en acciones cotidianas, como decir la verdad, cumplir con deberes, apoyar a los demás o aceptar las diferencias. <a href="https://docs.google.com/document/d/1HeJKIOsZxSGjUBxxg-qhHUVpHa0fLcqMy8iiPDAYJGU/edit?usp=drivesdk">Ver actividad 6</a> <br>
+               <br>
+                <img src="valores.jpg" alt="Computación en la nube" class="imagen-contenido">
+            </p>
+        </div>
+    </section>
+
+    <section class="contenido-educativo" id="parcial-2">
+        <div class="seccion-contenido">
+            <h2 class="titulo-seccion">Parcial 2: Gestión de Documentos Digitales</h2>
+            <h3 class="subtitulo">Formatos de archivos comunes</h3>
+            <p class="texto-contenido">
+                En el entorno digital trabajamos con diversos formatos de archivos, cada uno con sus características específicas y casos de uso recomendados. Comprender estas diferencias es esencial para una gestión eficiente de la información.
+            </p>
+            <p class="contenido-principal">
+                <span class="titulo-p">¿Qué es un archivo?</span>
+                Un archivo es una colección de datos almacenados en un medio digital. Algunos ejemplos incluyen documentos de texto, imágenes, archivos de audio y videos.
+            
+                <span class="titulo-p">¿Qué es el formato?</span>
+                El formato es la estructura y organización de los datos dentro de un archivo digital. Ejemplos comunes incluyen .docx para texto, .jpeg para imágenes, .mp3 para audio y .mp4 para video.
+            
+                <span class="titulo-p">¿Cuál es la diferencia entre archivo y formato?</span>
+                Para empezar, es crucial comprender la diferencia entre archivo y formato. Un archivo es una colección de datos almacenados en un medio digital, mientras que el formato se refiere a la estructura y organización de esos datos dentro del archivo. Para que lo veas de forma clara, imagina que en tu casa tienes papas. Las papas serían tu archivo y la forma en que las preparas (fritas, en ensalada, como puré) serían el formato.
+            </p>
+            <div class="contenedor-media">
+            </div>
+            <h4>Documentos de texto</h4>
+            <ul class="lista-temas">
+                <li><strong>.docx:</strong> Formato nativo de Microsoft Word, compatible con la mayoría de procesadores de texto. Conserva formato avanzado pero puede presentar incompatibilidades entre versiones.</li>
+                <li><strong>.pdf:</strong> Formato de Adobe que preserva el diseño original, ideal para documentos finales. Requiere software específico para edición.</li>
+                <li><strong>.odt:</strong> Formato abierto de OpenDocument, utilizado por suites ofimáticas libres como LibreOffice. Buen estándar para interoperabilidad.</li>
+            </ul>
+            <h4>Hojas de cálculo</h4>
+            <ul class="lista-temas">
+                <li><strong>.xlsx:</strong> Formato nativo de Microsoft Excel. Soporta fórmulas complejas, gráficos y macros.</li>
+                <li><strong>.csv:</strong> Archivo de valores separados por comas. Formato universal pero sin formato ni múltiples hojas.</li>
+                <li><strong>.ods:</strong> Formato abierto para hojas de cálculo. Alternativa libre a .xlsx.</li>
+            </ul>
+            <img src="formatos.jpg" alt="Formatos de archivo" class="imagen-contenido">
+            <h3 class="subtitulo">Conversión entre formatos</h3>
+            <p class="texto-contenido">
+                La conversión entre formatos es esencial para garantizar la compatibilidad y accesibilidad de los documentos. Este proceso puede realizarse mediante diversas herramientas y técnicas, cada una con sus ventajas y limitaciones.
+            </p>
+            <div class="nota-importante">
+                <h4>Mejores prácticas</h4>
+                <p>Siempre conserva una copia del archivo original antes de realizar conversiones, ya que algunos formatos pueden perder información o formato durante el proceso. Verifica el resultado de la conversión antes de compartir o eliminar el original. </b> <a href="https://www.gadae.com/blog/consejos-para-prevenir-la-perdida-de-archivos/">Mas información Aqui</a> </p>
+            </div>
+            <h4>Herramientas de conversión</h4>
+            <ul class="lista-temas">
+                <li><strong>Conversión en línea:</strong> Sitios como Zamzar, CloudConvert o los propios editores en la nube (Google Docs, Office 365). Ideales para conversiones rápidas sin instalar software.</li>
+                <li><strong>Software local:</strong> Programas como Adobe Acrobat (para PDF) o suites ofimáticas completas. Ofrecen mayor control sobre el proceso.</li>
+                <li><strong>APIs de conversión:</strong> Para desarrolladores que necesitan integrar la conversión en sus aplicaciones. Ejemplo: API de conversión de Google Drive.</b> <a href="https://es.wix.com/blog/tipos-de-archivos-y-como-utilizarlos">Más información</a></li>
+            </ul>
+            <h3 class="extension">Extensiones de archivos</h3>
+            <div class="contenedor-media">
+                <video controls width="1300" height="560">
+                    <source src="Extensiones de archivos.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+        <div class="resumen">
+            <p>Para la actividad 6 del presente parcial se realizo un video acerca del tema de la tuberculosis, esto con la finalidad de reforzar lo aprendido, para este video se utilizo <a href="https://www.flexclip.com/es/">FlexClip</a> una herramienta que ya se habia utilzado en el parcial anterior </p>
+            <p>Pero <strong>¿Que es la tuberculosis? </strong>La tuberculosis (TB) es una enfermedad infecciosa provocada por la bacteria Mycobacterium tuberculosis. Esta bacteria suele atacar principalmente los pulmones, aunque también puede afectar otras partes del cuerpo como los riñones, el cerebro, la columna vertebral o los ganglios linfáticos. Es una de las enfermedades más antiguas y, aunque existe tratamiento, sigue siendo un problema de salud pública en muchos países. <a href="https://drive.google.com/file/d/1ZzCVJTHyr0Mi1x9xKw4xsY_Ugb5HFChK/view?usp=drivesdk">Ver video</a> </p>
+            <br>  
+            <img src="tuberculosis.jpg" alt="Computación en la nube" class="imagen-contenido">
+            <br>
+               <p><strong>Formas de Transmisión</strong> <br> La tuberculosis se transmite por el aire, cuando una persona enferma tose, estornuda, escupe o habla, expulsando gotas microscópicas que contienen la bacteria. Al inhalar esas gotas, otra persona puede contagiarse. No se transmite por contacto físico como abrazos o besos, ni por compartir objetos.</p>
+               <br>
+               <p><strong>Causas</strong> <br> a causa directa es la infección por Mycobacterium tuberculosis. Sin embargo, hay factores que aumentan el riesgo de contraerla, como tener el sistema inmunológico debilitado (por VIH, diabetes, cáncer, etc.), vivir en lugares cerrados y con poca ventilación, tener mala alimentación o no contar con servicios médicos adecuados.</p>
+            <br>
+            <p><strong>Sintómas<br> </strong>Los síntomas más frecuentes de la tuberculosis pulmonar incluyen tos persistente durante más de dos semanas (a veces con sangre), dolor en el pecho, fiebre, sudores nocturnos, pérdida de apetito y de peso, fatiga y debilidad. Si la tuberculosis afecta otros órganos, los síntomas dependerán del área afectada.</p>
+            <br>
+            <img src="tuberculosis2.jpg" alt="Computación en la nube" class="imagen-contenido"> <br>
+            <p><strong>Consecuencias y Complicaciones <br></strong>Si no se trata, la tuberculosis puede causar daños severos en los pulmones y otros órganos. Puede generar insuficiencia respiratoria, meningitis, problemas renales o incluso la muerte. Además, existen cepas resistentes a los medicamentos, lo que hace el tratamiento más largo y complejo.</p>
+            <p><strong>Prevención <br> </strong>La forma más común de prevención es la vacuna BCG, que se aplica especialmente en recién nacidos en países con alta incidencia. También es importante mantener espacios ventilados, evitar el hacinamiento, y acudir al médico si se presentan síntomas sospechosos. La detección temprana y el aislamiento de casos activos también ayudan a evitar la propagación.</p>
+            <br>
+        
+
+
+        </div>
+    </section>
+
+    <section class="contenido-educativo" id="parcial-3"> 
+        <div class="seccion-contenido">
+            <h2 class="titulo-seccion">El parcial 3 Aun no comienza</h2>
+            <h3 class="subtitulo3"> Aqui se mostrará toda la información del 3° Parcial cuando este listo </h3>
+            <p class="texto-contenido">
+                
+            </p>
+            <div class="contenedor-media">
+                <img src="proximamente2.png" alt="Seguridad en la nube" class="Proximamente">
+            </div>
+            <!---
+            <ul class="lista-temas">
+                <li><strong>Autenticación fuerte:</strong> Implementación de múltiples factores de autenticación (MFA) para acceder a los recursos.</li>
+                <li><strong>Cifrado de datos:</strong> Protección de información tanto en tránsito (SSL/TLS) como en reposo (AES-256).</li>
+                <li><strong>Gestión de identidad:</strong> Control estricto de accesos mediante el principio de mínimo privilegio.</li>
+                <li><strong>Respaldo y recuperación:</strong> Estrategias 3-2-1 (3 copias, 2 medios diferentes, 1 fuera del sitio).</li>
+                <li><strong>Monitoreo continuo:</strong> Detección y respuesta a amenazas en tiempo real.</li>
+            </ul> 
+            <h3 class="subtitulo">Ética digital y propiedad intelectual</h3>
+            <p class="texto-contenido">
+                En el entorno digital, el respeto por la propiedad intelectual y la conducta ética son fundamentales. Esto incluye comprender los derechos de autor, licencias de software y las implicaciones legales del uso de material digital.
+        
+            </p>
+            <div class="nota-importante">
+                <h4>Derechos de autor en México</h4>
+                <p>La Ley Federal del Derecho de Autor protege las creaciones intelectuales. El uso no autorizado de software o contenido protegido puede acarrear sanciones que incluyen multas de hasta 20,000 días de salario mínimo y penas de prisión.</p>
+            </div>
+            <ul class="lista-temas">
+                <li><strong>Licencias de software:</strong> GPL (Software Libre), MIT (Permisiva), Creative Commons (Contenido).</li>
+                <li><strong>Uso ético de la información:</strong> Citar fuentes, no plagiar, respetar términos de uso.</li>
+                <li><strong>Privacidad y protección de datos:</strong> Ley de Protección de Datos Personales en Posesión de Particulares.</li>
+                <li><strong>Responsabilidad profesional:</strong> Manejo adecuado de información confidencial.</li>
+            </ul>
+        </div> -->
+    </section>
+
+
+    <section class="documentos-section" id="documentos-parcial1-page">
+        <div class="documentos-container">
+            <div class="documentos-header">
+                <i class="fas fa-cloud-download-alt"></i>
+                <h3>actividades del Parcial 1</h3>
+            </div>
+            <div class="documentos-list" id="documentos-parcial1">
+                </div>
+            <button class="btn-volver"><a href="#">Volver a Parciales</a></button>
+        </div>
+    </section>
+
+    <section class="documentos-section" id="documentos-parcial2-page">
+        <div class="documentos-container">
+            <div class="documentos-header">
+                <i class="fas fa-file-alt"></i>
+                <h3>Actividades del Parcial 2</h3>
+            </div>
+            <div class="documentos-list" id="documentos-parcial2">
+                </div>
+            <button class="btn-volver"><a href="#">Volver a Parciales</a></button>
+        </div>
+    </section>
+
+    <section class="documentos-section" id="documentos-parcial3-page">
+        <div class="documentos-container">
+            <div class="documentos-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Actividades de  Parcial 3</h3>
+            </div>
+            <p class="texto-contenido">Próximamente.</p>
+            <button class="btn-volver"><a href="#">Volver a la página principal</a></button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 CBTIS 251 - Todos los derechos reservados</p>
+            <p>Contacto: danielvaquero863@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
